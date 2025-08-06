@@ -1,0 +1,175 @@
+// src/styles/pages/_werte.scss
+
+@use "../variables" as v;
+
+.werte-layout {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  min-height: 80vh;
+
+  .werte-list {
+    width: 35%;
+    background-color: v.$background-color;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+
+    h2 {
+      font-size: v.$heading-size-m;
+      margin-bottom: 1rem;
+    }
+
+    .werte-tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      button {
+        flex: 1;
+        padding: 0.5rem 1rem;
+        border: 2px solid v.$secondary-color;
+        background: transparent;
+        color: v.$secondary-color;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: v.$body-size-s;
+
+        &.active {
+          background-color: v.$secondary-color;
+          color: white;
+        }
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-height: 60vh;
+      overflow-y: auto;
+
+      li {
+        padding: 0.6rem;
+        border-radius: 6px;
+        margin-bottom: 0.4rem;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: #f0f0f0;
+        }
+
+        &.selected {
+          background-color: v.$secondary-color;
+          color: white;
+
+          .wert-info {
+            color: white;
+          }
+        }
+
+        .wert-info {
+          font-weight: bold;
+          font-size: 0.9rem;
+          color: v.$secondary-color;
+        }
+      }
+    }
+  }
+
+  .werte-details {
+    width: 65%;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+
+    h2 {
+      font-size: v.$heading-size-l;
+      margin-bottom: 0.5rem;
+    }
+
+    .wert-info-text {
+      font-size: v.$body-size-m;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: v.$body-size-m;
+      margin-bottom: 0.8rem;
+
+      strong {
+        display: inline-block;
+        width: 180px;
+      }
+    }
+
+    h3 {
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+      text-align: left;
+    }
+
+    .werte-tabelle {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 0.75rem;
+        text-align: left;
+        font-size: v.$body-size-s;
+      }
+
+      th {
+        background-color: v.$background-color;
+        font-weight: bold;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+    }
+
+    .chart-container {
+      margin-top: 0;
+      margin-left: -1.5rem;
+    }
+
+    em {
+      color: gray;
+    }
+  }
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+
+    .werte-list,
+    .werte-details {
+      width: 100%;
+    }
+  }
+
+  .react-select-container {
+    .react-select__control {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: v.$body-size-xs;
+      background-color: white;
+      min-height: 34px;
+      height: 34px;
+    }
+
+    .react-select__option--is-selected {
+      background-color: v.$secondary-color;
+      color: white;
+    }
+  }
+}

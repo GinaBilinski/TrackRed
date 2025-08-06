@@ -1,0 +1,68 @@
+// src/styles/pages/_home.scss
+
+@use "../variables" as v;
+
+.home {
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+
+  &__banner {
+    width: 100%;
+    img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__content {
+    padding: 2rem 1.5rem;
+    padding-bottom: 5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: v.$heading-size-xl;
+    margin-bottom: 1rem;
+
+    span {
+      color: v.$secondary-color;
+    }
+  }
+
+  h2 {
+    font-size: v.$heading-size-l;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: v.$body-size-m;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+
+      &::before {
+        content: "•";
+        color: v.$secondary-color;
+        margin-right: 0.6rem;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: v.$heading-size-s;
+    color: v.$text-color;
+    margin-bottom: 2rem;
+  }
+}

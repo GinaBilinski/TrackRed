@@ -1,0 +1,253 @@
+// src/styles/pages/_hinzufuegen.scss
+
+@use "../variables" as v;
+
+.hinzufuegen {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  font-family: v.$font-body;
+
+  h1 {
+    font-family: v.$font-heading;
+    font-size: v.$heading-size-l;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-family: v.$font-heading;
+    font-size: v.$heading-size-m;
+    margin: 2rem 0 0 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-weight: v.$font-weight-bold;
+        font-size: v.$body-size-s;
+        margin-bottom: 0.3rem;
+      }
+
+      input {
+        padding: 0.7rem;
+        font-size: v.$body-size-m;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        color: v.$text-color;
+      }
+    }
+
+    .value-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .value-full {
+      width: 100%;
+    }
+
+    .value-pair {
+      display: flex;
+      gap: 1rem;
+      width: 100%;
+
+      .value-select,
+      .value-input {
+        flex: 1;
+        min-width: 0;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.6rem;
+        font-size: v.$body-size-m;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-family: v.$font-body;
+      }
+    }
+
+    .form-description {
+      font-family: v.$font-body;
+      font-size: v.$body-size-m;
+      color: v.$text-color;
+      margin-bottom: 2rem;
+    }
+
+    textarea {
+      width: 100%;
+      font-family: v.$font-body;
+      font-size: v.$body-size-m;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .add-button {
+      background-color: v.$background-color;
+      color: v.$secondary-color;
+      border: 2px solid v.$secondary-color;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      font-family: v.$font-body;
+      font-size: v.$body-size-m;
+      font-weight: v.$font-weight-regular;
+      cursor: pointer;
+      transition: 0.2s ease;
+      margin-top: 2rem;
+
+      &:hover {
+        background-color: v.$secondary-color;
+        color: white;
+      }
+    }
+
+    .submit-button {
+      background-color: v.$secondary-color;
+      color: white;
+      padding: 0.9rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-size: v.$heading-size-m;
+      font-family: v.$font-heading;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #800000;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .value-row {
+      flex-direction: column;
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  .overlay-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .overlay-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .overlay-actions button {
+    width: 250px;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    background-color: v.$secondary-color;
+    color: white;
+    cursor: pointer;
+    font-size: v.$heading-size-s;
+  }
+
+  .react-select-container {
+    width: 100%;
+    .react-select__control {
+      height: 40px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 0.2rem;
+      font-size: v.$body-size-m;
+    }
+
+    .react-select__control--is-focused {
+      box-shadow: none;
+    }
+
+    .react-select__option--is-selected {
+      background-color: v.$secondary-color;
+    }
+  }
+  @media (min-width: 601px) {
+    .value-row {
+      flex-direction: row;
+      align-items: center;
+
+      .value-full {
+        flex: 2;
+        margin-right: 1rem;
+        margin: 0;
+      }
+
+      .value-pair {
+        flex: 3;
+      }
+    }
+  }
+
+  // Platzhalter-Stil für alle normalen Felder
+  input::placeholder,
+  textarea::placeholder {
+    font-family: v.$font-body;
+    font-size: v.$body-size-m;
+    color: #999;
+    opacity: 1;
+  }
+
+  // Datumsfeld
+  input[type="date"] {
+    font-family: v.$font-body;
+    font-size: v.$body-size-m;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.7rem;
+    color: #999;
+
+    &::-webkit-datetime-edit {
+      color: #999;
+    }
+
+    &:valid::-webkit-datetime-edit {
+      color: v.$text-color;
+    }
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-calendar-picker-indicator {
+      filter: grayscale(100%);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}

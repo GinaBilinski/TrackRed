@@ -1,0 +1,53 @@
+// _typography.scss
+
+@use "./variables" as v;
+
+header {
+  font-family: v.$font-heading;
+  color: v.$text-color;
+}
+
+body {
+  font-family: v.$font-body;
+  color: v.$text-color;
+}
+
+h1 {
+  font-family: v.$font-heading;
+  font-weight: v.$font-weight-regular;
+  font-size: v.$heading-size-l;
+  margin: 0;
+}
+
+h2 {
+  font-family: v.$font-heading;
+  font-weight: v.$font-weight-regular;
+  font-size: v.$heading-size-m;
+  margin: 0;
+}
+
+h3 {
+  font-family: v.$font-heading;
+  font-weight: v.$font-weight-regular;
+  font-size: v.$heading-size-m;
+  margin: 0;
+}
+
+h4 {
+  font-family: v.$font-heading;
+  font-weight: v.$font-weight-regular;
+  font-size: v.$heading-size-s;
+  margin: 0;
+}
+
+h5 {
+  font-family: v.$font-heading;
+  font-weight: v.$font-weight-regular;
+  font-size: v.$heading-size-xs;
+  margin: 0;
+}
+
+button {
+  font-family: v.$font-heading;
+  font-size: v.$heading-size-m;
+}
