@@ -18,7 +18,8 @@ Nutzer:innen können Blutabnahmen erfassen, Werte in verschiedenen Einheiten spe
 - **Testing**: Vitest, Playwright 
 
 ## Projektstruktur
- trackred-frontend/   
+TrackRed/
+├── trackred-frontend/   
 └── trackred-backend/
 
 ## Lokale Installation
