@@ -8,12 +8,20 @@
   padding: 2rem;
   min-height: 80vh;
 
+  @media (max-width: 868px) {
+    padding: 1rem;
+  }
+
   .werte-list {
     width: 35%;
     background-color: v.$background-color;
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+
+    @media (max-width: 868px) {
+      padding: 2rem 1rem;
+    }
 
     h2 {
       font-size: v.$heading-size-m;
@@ -85,9 +93,13 @@
   .werte-details {
     width: 65%;
     background-color: white;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+
+    @media (max-width: 868px) {
+      padding: 2rem 1rem;
+    }
 
     h2 {
       font-size: v.$heading-size-l;

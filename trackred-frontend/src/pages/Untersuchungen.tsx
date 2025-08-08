@@ -150,52 +150,54 @@ export default function Untersuchungen() {
             )}
             {/* Blutwerte-Tabelle */}
             <h3>Gemessene Werte</h3>
-            <table className="werte-tabelle">
-              <thead>
-                <tr>
-                  <th>Wert</th>
-                  <th>Messwert</th>
-                  <th>Einheit</th>
-                  <th>Referenz</th>
-                </tr>
-              </thead>
-              <tbody>
-                {selected.values.map((val, idx) => {
-                  if (!val.definition) return null;
+            <div className="werte-tabelle-container">
+              <table className="werte-tabelle">
+                <thead>
+                  <tr>
+                    <th>Wert</th>
+                    <th>Messwert</th>
+                    <th>Einheit</th>
+                    <th>Referenz</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {selected.values.map((val, idx) => {
+                    if (!val.definition) return null;
 
-                  const conversionFactors =
-                    typeof val.definition.conversion_factors === "string"
-                      ? JSON.parse(val.definition.conversion_factors)
-                      : val.definition.conversion_factors;
+                    const conversionFactors =
+                      typeof val.definition.conversion_factors === "string"
+                        ? JSON.parse(val.definition.conversion_factors)
+                        : val.definition.conversion_factors;
 
-                  const refMinConverted = umrechnen(
-                    val.definition.reference_min,
-                    val.definition.unit,
-                    val.unit,
-                    conversionFactors
-                  );
+                    const refMinConverted = umrechnen(
+                      val.definition.reference_min,
+                      val.definition.unit,
+                      val.unit,
+                      conversionFactors
+                    );
 
-                  const refMaxConverted = umrechnen(
-                    val.definition.reference_max,
-                    val.definition.unit,
-                    val.unit,
-                    conversionFactors
-                  );
+                    const refMaxConverted = umrechnen(
+                      val.definition.reference_max,
+                      val.definition.unit,
+                      val.unit,
+                      conversionFactors
+                    );
 
-                  return (
-                    <tr key={idx}>
-                      <td>{val.definition.name}</td>
-                      <td>{val.measured_value}</td>
-                      <td>{val.unit ?? val.definition.unit}</td>
-                      <td>
-                        {formatZahl(refMinConverted)}–
-                        {formatZahl(refMaxConverted)}
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+                    return (
+                      <tr key={idx}>
+                        <td>{val.definition.name}</td>
+                        <td>{val.measured_value}</td>
+                        <td>{val.unit ?? val.definition.unit}</td>
+                        <td>
+                          {formatZahl(refMinConverted)}–
+                          {formatZahl(refMaxConverted)}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
             {/* Button: Untersuchung löschen */}
             <div
               style={{

@@ -34,10 +34,9 @@ function Home() {
         <section className="home__benefits">
           <h2>Deine Vorteile:</h2>
           <ul>
-            <li>Sichere Speicherung deiner Blutwerte in der Cloud</li>
-            <li>Übersichtlicher Verlauf und Vergleich über die Zeit</li>
-            <li>Zugriff jederzeit – auch mobil</li>
-            <li>Intuitive Bedienung, auch ohne medizinisches Vorwissen</li>
+            <li>Sichere Speicherung deiner Blutwerte</li>
+            <li>Übersichtlicher Verlauf und Vergleich</li>
+            <li>Jederzeit Zugriff</li>
           </ul>
         </section>
       </div>

@@ -43,10 +43,10 @@ class BloodTestController extends Controller{
 
     // Löscht eine vorhandene Untersuchung (inkl. Werte)
     public function destroy($id){
-    $test = BloodTest::findOrFail($id);
-    $test->delete();
-
-    return response()->json(['message' => 'Untersuchung gelöscht']);}
+        $test = BloodTest::findOrFail($id);
+        $test->delete();
+        return response()->json(['message' => 'Untersuchung gelöscht']);
+    }
 
     // Gibt alle Blutuntersuchungen des eingeloggten Nutzers zurück (inkl. zugehöriger Werte)
     public function index(){
